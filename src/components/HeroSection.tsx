@@ -11,11 +11,12 @@ const HeroSection = ({ onGetQuoteClick }: HeroSectionProps = {}) => {
   return (
     <div className="relative h-screen w-full overflow-hidden bg-background">
       {/* Background Image - Metal Craftsmanship */}
+      {/* Background Image - Activated Carbon / Clean Tech */}
       <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200&q=80)",
+            "url(https://images.unsplash.com/photo-1611175141151-d9a7f81e0e1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80)", // Abstract clean tech / molecular structure
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "brightness(0.7)",
@@ -23,7 +24,7 @@ const HeroSection = ({ onGetQuoteClick }: HeroSectionProps = {}) => {
       />
 
       {/* Glassmorphic Overlay */}
-      <div className="absolute inset-0 z-10 glassmorphic-dark" />
+      <div className="absolute inset-0 z-10 glass-effect-dark bg-gradient-to-b from-black/10 to-black/40" /> {/* Subtle gradient overlay */}
 
       {/* Content Container */}
       <div className="relative z-20 flex h-full w-full flex-col items-center justify-center px-4 text-center text-white">
@@ -33,82 +34,28 @@ const HeroSection = ({ onGetQuoteClick }: HeroSectionProps = {}) => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
-          {/* Main Heading */}
-          <h1 className="mb-4 text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Precision Metal Craftsmanship That Transforms Your Vision Into
-            Reality
+          {/* Main Heading - Activated Carbon Focus */}
+          <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            Revolutionizing Carbon: <br />
+            <span className="text-[#4CAF50]">Sustainable Activated Carbon</span>{" "}
+            from Organic Waste.
           </h1>
 
-          {/* Subheading */}
-          <p className="mb-8 text-lg sm:text-xl md:text-2xl">
-            For over 25 years, Canada's most demanding architects, designers,
-            and builders have trusted us with their most challenging metal
-            fabrication projects. Discover why.
+          {/* Subheading - Activated Carbon Focus */}
+          <p className="mb-10 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto font-light">
+            Afmerica Technology transforms everyday organic waste, like coffee
+            grounds, into high-performance activated carbon. Discover our
+            cleaner, greener process driving the circular economy forward.
           </p>
 
-          {/* CTA Button */}
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button
-                onClick={onGetQuoteClick}
-                size="lg"
-                className="bg-[#4CAF50] px-8 py-6 text-lg font-semibold text-white hover:bg-[#4CAF50]/90 shadow-lg transition-all duration-300 hover:scale-105"
-              >
-                Request Your Custom Project Consultation
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="glassmorphic-card sm:max-w-[600px]">
-              {/* Quote form will be implemented separately */}
-              <div className="p-6">
-                <h2 className="mb-4 text-2xl font-bold text-[#0A1D3A]">
-                  Your Custom Metal Project Consultation
-                </h2>
-                <p className="mb-4 text-[#212121]">
-                  Take the first step toward bringing your vision to life. Our
-                  expert craftsmen will analyze your project requirements and
-                  provide a detailed consultation worth $500 — yours at no
-                  obligation.
-                </p>
-                <div className="space-y-4">
-                  <div className="grid gap-2">
-                    <label htmlFor="name" className="text-sm font-medium">
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      type="text"
-                      className="w-full rounded-md border p-2"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div className="grid gap-2">
-                    <label htmlFor="email" className="text-sm font-medium">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      className="w-full rounded-md border p-2"
-                      placeholder="Your email"
-                    />
-                  </div>
-                  <div className="grid gap-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Tell us about your project
-                    </label>
-                    <textarea
-                      id="message"
-                      className="h-24 w-full rounded-md border p-2"
-                      placeholder="Describe your project requirements, timeline, and any specific details..."
-                    ></textarea>
-                  </div>
-                  <Button className="w-full bg-[#4CAF50] text-white hover:bg-[#4CAF50]/90 shadow-md transition-all duration-300 hover:shadow-lg">
-                    Get My Free Consultation
-                  </Button>
-                </div>
-              </div>
-            </DialogContent>
-          </Dialog>
+          {/* CTA Button - Updated Text */}
+          <Button
+            onClick={onGetQuoteClick} // Triggers QuoteForm Dialog in home.tsx
+            size="lg"
+            className="bg-[#4CAF50] px-10 py-7 text-xl font-semibold text-white hover:bg-[#3e9e41] shadow-xl transition-all duration-300 hover:scale-105 rounded-lg"
+          >
+            Explore Our Carbon Solutions
+          </Button>
         </motion.div>
       </div>
 

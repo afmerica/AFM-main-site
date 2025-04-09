@@ -26,6 +26,16 @@ interface QuoteFormProps {
 }
 
 const QuoteForm = ({ isOpen = true, onClose = () => {} }: QuoteFormProps) => {
+  // Updated service options for Activated Carbon
+  const serviceOptions = [
+    { value: "carbon-supply", label: "Activated Carbon Supply (Bulk/Custom)" },
+    { value: "waste-valorization", label: "Organic Waste Valorization Partnership" },
+    { value: "process-technology", label: "Carbon Activation Technology Licensing" },
+    { value: "rd-collaboration", label: "R&D Collaboration / Material Testing" },
+    { value: "consulting", label: "Sustainability & Circular Economy Consulting" },
+    { value: "other", label: "Other Inquiry" },
+  ];
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -74,11 +84,13 @@ const QuoteForm = ({ isOpen = true, onClose = () => {} }: QuoteFormProps) => {
   };
 
   return (
+    // Re-add the Dialog wrapper here, controlled by isOpen and onClose props
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[600px] bg-white/90 backdrop-blur-md border border-white/20 rounded-xl shadow-xl">
+      <DialogContent className="sm:max-w-[600px] glass-effect p-6 md:p-8">
+        {/* Close button */}
         <div className="absolute right-4 top-4">
           <Button
-            variant="ghost"
+          variant="ghost"
             size="icon"
             onClick={onClose}
             className="text-gray-500 hover:text-gray-700"
@@ -87,13 +99,14 @@ const QuoteForm = ({ isOpen = true, onClose = () => {} }: QuoteFormProps) => {
           </Button>
         </div>
 
-        <DialogHeader className="mb-6">
+        {/* Header Updated for Carbon Focus */}
+        <DialogHeader className="mb-6 text-center">
           <DialogTitle className="text-2xl font-bold text-[#0A1D3A]">
-            Get Your Free Quote
+            Inquire About Our Carbon Solutions
           </DialogTitle>
           <DialogDescription className="text-gray-600">
-            Tell us about your project and we'll get back to you within 24
-            hours.
+            Let us know how Afmerica Technology can help with your activated
+            carbon needs or sustainability goals.
           </DialogDescription>
         </DialogHeader>
 
@@ -139,7 +152,7 @@ const QuoteForm = ({ isOpen = true, onClose = () => {} }: QuoteFormProps) => {
                   onChange={handleChange}
                   placeholder="John Doe"
                   required
-                  className="bg-white/50"
+                  className="bg-white/60 border-white/30 focus:ring-[#4CAF50]" // Adjusted style
                 />
               </div>
               <div className="space-y-2">
@@ -152,7 +165,7 @@ const QuoteForm = ({ isOpen = true, onClose = () => {} }: QuoteFormProps) => {
                   onChange={handleChange}
                   placeholder="john@example.com"
                   required
-                  className="bg-white/50"
+                  className="bg-white/60 border-white/30 focus:ring-[#4CAF50]" // Adjusted style
                 />
               </div>
             </div>
@@ -166,7 +179,7 @@ const QuoteForm = ({ isOpen = true, onClose = () => {} }: QuoteFormProps) => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="(123) 456-7890"
-                  className="bg-white/50"
+                  className="bg-white/60 border-white/30 focus:ring-[#4CAF50]" // Adjusted style
                 />
               </div>
               <div className="space-y-2">
@@ -177,60 +190,49 @@ const QuoteForm = ({ isOpen = true, onClose = () => {} }: QuoteFormProps) => {
                   value={formData.company}
                   onChange={handleChange}
                   placeholder="Your Company"
-                  className="bg-white/50"
+                  className="bg-white/60 border-white/30 focus:ring-[#4CAF50]" // Adjusted style
                 />
               </div>
             </div>
 
+            {/* Service Selection Updated */}
             <div className="space-y-2">
-              <Label htmlFor="service">Service Interested In</Label>
+              <Label htmlFor="service">Area of Interest</Label>
               <Select
                 value={formData.service}
                 onValueChange={handleSelectChange}
               >
-                <SelectTrigger className="bg-white/50">
-                  <SelectValue placeholder="Select a service" />
+                <SelectTrigger className="bg-white/60 border-white/30 focus:ring-[#4CAF50]">
+                  <SelectValue placeholder="Select an area of interest" />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="carbon-activation">
-                    Carbon Activation
-                  </SelectItem>
-                  <SelectItem value="clean-technology">
-                    Clean Technology
-                  </SelectItem>
-                  <SelectItem value="waste-valorization">
-                    Solid Waste Valorization
-                  </SelectItem>
-                  <SelectItem value="equipment-development">
-                    Equipment & Technology Development
-                  </SelectItem>
-                  <SelectItem value="green-rd">
-                    Green Research & Development
-                  </SelectItem>
-                  <SelectItem value="process-optimization">
-                    Process Optimization
-                  </SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                <SelectContent className="glass-effect-light">
+                  {serviceOptions.map((option) => (
+                    <SelectItem key={option.value} value={option.value}>
+                      {option.label}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
 
+            {/* Message Field Updated */}
             <div className="space-y-2">
-              <Label htmlFor="message">Project Details</Label>
+              <Label htmlFor="message">Your Inquiry / Project Details</Label>
               <Textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Tell us about your project or requirements..."
+                placeholder="Please describe your requirements, application, estimated volume, or partnership ideas..."
                 rows={4}
-                className="bg-white/50"
+                className="bg-white/60 border-white/30 focus:ring-[#4CAF50]" // Adjusted style
               />
             </div>
 
+            {/* Updated Button Style */}
             <Button
               type="submit"
-              className="w-full bg-[#4CAF50] hover:bg-[#3d9140] text-white font-medium py-2 px-4 rounded-md transition-colors"
+              className="w-full bg-[#4CAF50] hover:bg-[#3e9e41] text-white font-semibold py-3 px-4 rounded-md transition-all duration-300 shadow-md hover:shadow-lg"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
@@ -258,21 +260,19 @@ const QuoteForm = ({ isOpen = true, onClose = () => {} }: QuoteFormProps) => {
                   Processing...
                 </>
               ) : (
-                "Submit Quote Request"
+                "Submit Inquiry" // Updated Button Text
               )}
             </Button>
 
-            <p className="text-xs text-gray-500 text-center mt-4">
-              By submitting this form, you agree to our{" "}
-              <a href="#" className="text-[#0A1D3A] underline">
-                Privacy Policy
-              </a>{" "}
-              and consent to being contacted regarding your inquiry.
+            {/* Adjusted Privacy Note */}
+            <p className="text-xs text-gray-500 text-center mt-2">
+              We respect your privacy. Your information will only be used to
+              discuss your project needs.
             </p>
           </form>
         )}
       </DialogContent>
-    </Dialog>
+    </Dialog> // Close the Dialog wrapper
   );
 };
 

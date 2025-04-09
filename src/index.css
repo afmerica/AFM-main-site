@@ -76,31 +76,37 @@
 }
 
 @layer components {
-  .glassmorphic {
-    @apply bg-white/30 backdrop-blur-md border border-white/20 shadow-lg;
+  /* Base glass effect for sections, cards, panels */
+  .glass-effect {
+    @apply bg-white/20 backdrop-blur-xl border border-white/10 shadow-lg rounded-xl;
+    /* backdrop-blur-xl is roughly 16px */
   }
-  .glassmorphic-dark {
-    @apply bg-[#0A1D3A]/40 backdrop-blur-md border border-white/10 shadow-lg;
+
+  /* Darker variant for overlays or specific elements */
+  .glass-effect-dark {
+    @apply bg-black/10 backdrop-blur-xl border border-white/5 shadow-lg rounded-xl;
   }
-  .glassmorphic-card {
-    @apply bg-white/70 backdrop-blur-sm border border-white/30 shadow-md;
+
+  /* Lighter variant, maybe for cards on darker backgrounds */
+  .glass-effect-light {
+     @apply bg-white/30 backdrop-blur-xl border border-white/15 shadow-lg rounded-xl;
   }
-  .glassmorphic-panel {
-    @apply bg-white/60 backdrop-blur-sm border border-white/20 shadow-sm;
+
+  /* Class specifically for section containers to manage padding/content */
+  .glass-section {
+    @apply relative py-20 overflow-hidden; /* Keep relative for potential absolute children */
   }
-  .glassmorphic-section {
-    @apply relative overflow-hidden;
+
+  /* Content wrapper within a glass section */
+  .glass-section-content {
+    @apply relative z-10 container mx-auto px-4; /* Ensure content is above any background effects */
   }
-  .glassmorphic-section-overlay {
-    @apply absolute inset-0 bg-white/10 backdrop-blur-[2px] z-0;
+
+  /* Simple border utility if needed separately */
+  .glass-border {
+    @apply border border-white/10 rounded-xl;
   }
-  .glassmorphic-section-content {
-    @apply relative z-10;
-  }
-  .glassmorphic-border {
-    @apply border border-white/20 rounded-xl;
-  }
-  .glassmorphic-metal {
-    @apply bg-[#0A1D3A]/70 backdrop-blur-md border border-[#4CAF50]/20 shadow-lg;
-  }
+
+  /* Remove old/unused styles */
+  /* .glassmorphic, .glassmorphic-dark, .glassmorphic-card, .glassmorphic-panel, .glassmorphic-section, .glassmorphic-section-overlay, .glassmorphic-border, .glassmorphic-metal are replaced by the above */
 }
