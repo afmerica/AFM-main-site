@@ -130,10 +130,10 @@ const HomePage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-[#0A1D3A] mb-4 tracking-tight">
-              Pioneering a <span className="text-[#4CAF50]">Greener Future</span> with Advanced Carbon Technology
+              Engineered in Châteauguay. Designed for a <span className="text-[#4CAF50]">Cleaner Planet</span>.
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              At Afmerica Technology, we're not just creating activated carbon; we're redefining its potential. By transforming organic waste streams into high-value materials, we champion the circular economy and provide industries with superior, sustainable solutions.
+              From our facility just minutes from the Châteauguay River and Mercier Bridge, AfmericaTech delivers precision carbon solutions to Montreal, the West Island, and across Quebec. We combine clean-tech innovation with local impact, supporting the circular economy and reducing greenhouse gases—one batch of waste at a time.
             </p>
           </motion.div>
 
@@ -148,27 +148,16 @@ const HomePage = () => {
               className="glass-effect p-8 md:p-10 text-left"
             >
               <h3 className="text-2xl font-semibold text-[#0A1D3A] mb-4">
-                Our Innovative Approach:
+                From Coffee Waste to Clean Tech: Our Process
               </h3>
-              <ul className="space-y-3 text-gray-700 mb-6 list-disc list-inside">
-                <li>
-                  <span className="font-medium text-[#0A1D3A]">Waste Valorization:</span> We unlock the hidden value in organic byproducts (like used coffee grounds), diverting waste from landfills.
-                </li>
-                <li>
-                  <span className="font-medium text-[#0A1D3A]">Proprietary Activation Process:</span> Our cleaner, energy-efficient technology produces high-purity activated carbon with tailored properties.
-                </li>
-                <li>
-                  <span className="font-medium text-[#0A1D3A]">Circular Economy Leadership:</span> We create closed-loop systems, contributing to resource efficiency and reduced environmental impact.
-                </li>
-                <li>
-                  <span className="font-medium text-[#0A1D3A]">Customizable Solutions:</span> We engineer carbon materials to meet specific performance requirements for diverse applications (filtration, purification, energy storage, etc.).
-                </li>
-              </ul>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                Using advanced pyrolysis and activation methods, we convert everyday waste—like spent coffee grounds—into high-adsorption activated carbon for use in air, water, and industrial filtration systems. Our process is energy-efficient, scalable, and built for sustainability.
+              </p>
               <h3 className="text-2xl font-semibold text-[#0A1D3A] mb-4">
-                Partnering for a Sustainable Tomorrow
+                Serving Quebec's Eco-Conscious Leaders
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                Join us in building a more sustainable world. Whether you need advanced carbon materials or seek innovative waste solutions, Afmerica Technology is your dedicated partner in clean tech innovation.
+                Whether you're a food processor in Longueuil, a recycler in Lachine, or a municipality in Laval seeking sustainable waste-to-resource partnerships, AfmericaTech brings smart carbon solutions to your doorstep. We proudly serve businesses across Châteauguay, Montreal, West Island, South Shore, and the Montérégie region.
               </p>
             </motion.div>
             {/* Replace image and apply glass border */}
@@ -180,11 +169,14 @@ const HomePage = () => {
               viewport={{ once: true }}
               className="glass-border overflow-hidden shadow-xl"
             >
-              <img
-                src="/images/carbon-innovation.jpg" // Carbon innovation research image
-                alt="Innovative Carbon Research and Development"
-                className="w-full h-full object-cover"
-              />
+              <div className="relative h-full w-full">
+                <img
+                  src="/images/sustainable-solutions.jpg" // Using local image from public directory
+                  alt="Activated carbon made from recycled coffee grounds in Châteauguay, QC"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#0A1D3A]/30 to-transparent"></div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -201,11 +193,22 @@ const HomePage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">
-              Our Technology & <span className="text-[#4CAF50]">Solutions</span>
+              Why Choose <span className="text-[#4CAF50]">AfmericaTech</span>?
             </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Leveraging our proprietary process, we offer a range of activated carbon products and services designed for performance, sustainability, and economic value.
-            </p>
+            <div className="flex flex-col md:flex-row justify-center gap-8 mt-8 max-w-4xl mx-auto">
+              <div className="glass-effect-light bg-white/10 p-6 rounded-lg flex-1">
+                <h3 className="text-xl font-semibold text-white mb-3">Locally Manufactured</h3>
+                <p className="text-gray-300">Proudly made in Châteauguay, QC, supporting local economy and reducing transportation emissions</p>
+              </div>
+              <div className="glass-effect-light bg-white/10 p-6 rounded-lg flex-1">
+                <h3 className="text-xl font-semibold text-white mb-3">Eco-Friendly Impact</h3>
+                <p className="text-gray-300">Reduces landfill waste and carbon emissions through our innovative circular process</p>
+              </div>
+              <div className="glass-effect-light bg-white/10 p-6 rounded-lg flex-1">
+                <h3 className="text-xl font-semibold text-white mb-3">Canadian Innovation</h3>
+                <p className="text-gray-300">Community-driven, circular-economy focused solutions for B2B applications in filtration and environmental engineering</p>
+              </div>
+            </div>
           </motion.div>
 
           {/* Services Grid - Activated Carbon Focus */}
@@ -216,42 +219,42 @@ const HomePage = () => {
                 title: "Activated Carbon Supply",
                 description:
                   "High-purity, sustainably sourced activated carbon tailored to your specifications for filtration, purification, and industrial applications.",
-                img: "/images/activated-carbon.jpg", // Carbon powder/pellets
+                img: "/images/activated-carbon.jpg", // Using local image from public directory
               },
               {
                 icon: <Recycle className="h-10 w-10 text-[#4CAF50]" />,
                 title: "Organic Waste Valorization",
                 description:
                   "Partner with us to transform your organic waste streams (e.g., coffee grounds, agricultural residues) into valuable activated carbon products.",
-                img: "/images/organic-waste.jpg", // Coffee grounds / organic material
+                img: "/images/organic-waste.jpg", // Using local image from public directory
               },
               {
                 icon: <Lightbulb className="h-10 w-10 text-[#4CAF50]" />,
                 title: "Technology Licensing",
                 description:
                   "Integrate our proprietary, energy-efficient carbon activation technology into your operations for enhanced sustainability and performance.",
-                img: "/images/technology-licensing.jpg", // Technology licensing image
+                img: "/images/technology-licensing.jpg", // Using local image from public directory
               },
               {
                 icon: <FlaskConical className="h-10 w-10 text-[#4CAF50]" />,
                 title: "R&D and Material Testing",
                 description:
                   "Collaborate with our material scientists to develop custom carbon solutions or test the efficacy of our materials for your specific application.",
-                img: "/images/rd-testing.jpg", // Lab testing / research
+                img: "/images/rd-testing.jpg", // Using local image from public directory
               },
               {
                 icon: <Leaf className="h-10 w-10 text-[#4CAF50]" />,
                 title: "Sustainable Solutions Consulting",
                 description:
                   "Leverage our expertise in the circular economy and material science to enhance your company's sustainability initiatives and reporting.",
-                img: "/images/sustainable-solutions.jpg", // Green meeting / sustainability concept
+                img: "/images/sustainable-solutions.jpg", // Using local image from public directory
               },
               {
                 icon: <Handshake className="h-10 w-10 text-[#4CAF50]" />,
                 title: "Strategic Partnerships",
                 description:
                   "We seek collaborations with industry leaders, researchers, and municipalities to scale our impact and accelerate the transition to a circular economy.",
-                img: "/images/strategic-partnerships.jpg", // Partnership/handshake
+                img: "/images/strategic-partnerships.jpg", // Using local image from public directory
               },
             ].map((service, index) => (
               <motion.div
@@ -272,7 +275,11 @@ const HomePage = () => {
                      </CardTitle>
                    </CardHeader>
                    <CardContent className="p-6 pt-0 text-center flex-grow flex flex-col">
-                     <img src={service.img} alt={service.title} className="w-full h-40 object-cover rounded-md mb-4 glass-border"/>
+                     <img 
+                       src={service.img} 
+                       alt={`${service.title} - Sustainable activated carbon solutions in Châteauguay, Quebec`} 
+                       className="w-full h-40 object-cover rounded-md mb-4 glass-border"
+                     />
                      <p className="text-gray-300 flex-grow">{service.description}</p>
                    </CardContent>
                  </Card>
@@ -311,17 +318,39 @@ const HomePage = () => {
                <p className="text-gray-700 mb-4">
                  Canada Custom Metal continues to provide top-tier custom metalwork, architectural features, and structural steel solutions for diverse industries.
                </p>
-               {/* Optional: Add a button linking to CCM if it has a separate site/page */}
-               {/* <Button variant="outline" className="border-[#0A1D3A] text-[#0A1D3A] hover:bg-[#0A1D3A]/10">
-                 Learn More About CCM
-               </Button> */}
+               <p className="text-gray-700 mb-4">
+                 <strong>Emergency? Call Us On (514) 462-7575</strong>
+               </p>
+               <div className="grid grid-cols-2 gap-4">
+                 <div>
+                   <h4 className="text-lg font-semibold text-[#0A1D3A] mb-2">Services:</h4>
+                   <ul className="text-gray-700 mb-4 list-disc pl-5 space-y-1 text-sm">
+                     <li>Precision Welding</li>
+                     <li>Design & Engineering</li>
+                     <li>Metal Fabrication</li>
+                     <li>Industrial Equipment</li>
+                   </ul>
+                 </div>
+                 <div>
+                   <h4 className="text-lg font-semibold text-[#0A1D3A] mb-2">Process:</h4>
+                   <ul className="text-gray-700 mb-4 list-disc pl-5 space-y-1 text-sm">
+                     <li>Consultation</li>
+                     <li>Design & Prototyping</li>
+                     <li>Fabrication</li>
+                     <li>Installation & QA</li>
+                   </ul>
+                 </div>
+               </div>
              </div>
              <div className="glass-border overflow-hidden rounded-lg">
-               <img
-                 src="/images/metal-fabrication.jpg" // Metal fabrication image
-                 alt="Canada Custom Metal Fabrication"
-                 className="w-full h-auto object-cover"
-               />
+               <div className="relative h-full w-full">
+                 <img
+                   src="/images/carbon-innovation.jpg" // Using a better image from public directory
+                   alt="Canada Custom Metal Fabrication in Châteauguay, Quebec - parent company of AfmericaTech"
+                   className="w-full h-auto object-cover"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-br from-[#0A1D3A]/20 to-transparent"></div>
+               </div>
              </div>
            </motion.div>
          </div>
@@ -438,11 +467,14 @@ const HomePage = () => {
               className="glass-effect p-8 text-center md:text-left"
             >
               <div className="glass-border overflow-hidden rounded-lg mb-6">
-                <img
-                  src="/images/connect.jpg"
-                  alt="Connect with Afmerica Technology"
-                  className="w-full h-auto object-cover"
-                />
+                <div className="relative">
+                  <img
+                    src="/images/connect.jpg" // Using local image from public directory
+                    alt="Contact our activated carbon manufacturing team in Châteauguay, Quebec"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1D3A]/30 to-transparent"></div>
+                </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0A1D3A] mb-4">
                 Discuss Your Needs

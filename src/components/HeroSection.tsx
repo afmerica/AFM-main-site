@@ -16,10 +16,10 @@ const HeroSection = ({ onGetQuoteClick }: HeroSectionProps = {}) => {
         className="absolute inset-0 z-0"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1611175141151-d9a7f81e0e1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80)", // Abstract clean tech / molecular structure
+            "url('/images/carbon-innovation.jpg')", // Using local image from public directory
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "brightness(0.7)",
+          filter: "brightness(0.5) contrast(1.2)", // Darker with more contrast for dramatic effect
         }}
       />
 
@@ -34,18 +34,16 @@ const HeroSection = ({ onGetQuoteClick }: HeroSectionProps = {}) => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
-          {/* Main Heading - Activated Carbon Focus */}
+          {/* Main Heading - SEO Optimized */}
           <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Revolutionizing Carbon: <br />
-            <span className="text-[#4CAF50]">Sustainable Activated Carbon</span>{" "}
-            from Organic Waste.
+            Revolutionizing Activated Carbon from Organic Waste in Québec
           </h1>
 
-          {/* Subheading - Activated Carbon Focus */}
+          {/* Subheading - SEO Optimized */}
           <p className="mb-10 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto font-light">
-            Afmerica Technology transforms everyday organic waste, like coffee
-            grounds, into high-performance activated carbon. Discover our
-            cleaner, greener process driving the circular economy forward.
+            AfmericaTech is pioneering the future of sustainable carbon materials—right here in Châteauguay. 
+            By transforming spent coffee grounds and other organic waste into high-performance activated carbon, 
+            we're eliminating landfill dependency and redefining what's possible in green manufacturing.
           </p>
 
           {/* CTA Button - Updated Text */}
