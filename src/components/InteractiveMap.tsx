@@ -22,7 +22,7 @@ const mapOptions = {
 };
 
 // Google Maps API Key from environment variables
-const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+const API_KEY = import.meta.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 const libraries: (
   | "places"
