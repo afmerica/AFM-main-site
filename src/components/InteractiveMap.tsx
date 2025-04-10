@@ -21,8 +21,8 @@ const mapOptions = {
   // styles: [] // Add custom map styles (e.g., from Snazzy Maps) if desired
 };
 
-// Google Maps API Key - IMPORTANT: Store securely, ideally in environment variables
-const API_KEY = "AIzaSyATbWX8u-BwvDWqn805Hi1_OWPNRAr2nuo"; // Replace with your actual key
+// Google Maps API Key from environment variables
+const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 const libraries: (
   | "places"
